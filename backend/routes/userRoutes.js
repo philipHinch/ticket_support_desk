@@ -6,7 +6,7 @@ const router = express.Router();
 const { registerUser, loginUser } = require('../controllers/userController');
 
 // added imported route functions to each route
-router.post('/', registerUser)
-router.post('/login', loginUser)
+router.post('/', registerUser);
+router.post('/login', loginUser);
 
 module.exports = router
