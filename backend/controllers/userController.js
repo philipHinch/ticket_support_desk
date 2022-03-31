@@ -1,6 +1,7 @@
 // here we create all the route logic
 
-// import express-async-handler to use async on the routing functions below
+// import express-async-handler to use async on the routing functions below (useful with mongoose)
+// it makes it easier to deal with async functions
 const asyncHandler = require('express-async-handler');
 
 // @desc - register a new user
