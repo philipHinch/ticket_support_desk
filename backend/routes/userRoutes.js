@@ -2,15 +2,11 @@
 const express = require('express');
 // creates a router as a module
 const router = express.Router();
+// import the route logic functions from the userController
+const { registerUser, loginUser } = require('../controllers/userController');
 
-
-// this will be added on to whatever requires it
-router.post('/', (req, res) => {
-    res.send('Register Route')
-})
-// this will be added on to whatever requires it
-router.post('/login', (req, res) => {
-    res.send('Login Route')
-})
+// added imported route functions to each route
+router.post('/', registerUser)
+router.post('/login', loginUser)
 
 module.exports = router
