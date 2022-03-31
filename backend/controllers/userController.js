@@ -1,9 +1,12 @@
 // here we create all the route logic
 
+// import express-async-handler to use async on the routing functions below
+const asyncHandler = require('express-async-handler');
+
 // @desc - register a new user
 // @route - /api/users
 // @access - public
-const registerUser = (req, res) => {
+const registerUser = asyncHandler(async (req, res) => {
     // get data from the request
     const { name, email, password } = req.body;
     //validation
@@ -13,13 +16,13 @@ const registerUser = (req, res) => {
     }
 
     res.send('Register Route')
-};
+});
 
 // @desc - login a new user
 // @route - /api/users/login
 // @access - public
-const loginUser = (req, res) => {
+const loginUser = asyncHandler(async (req, res) => {
     res.send('Login Route')
-};
+});
 
 module.exports = { registerUser, loginUser }
